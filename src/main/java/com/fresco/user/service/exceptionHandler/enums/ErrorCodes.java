@@ -1,4 +1,4 @@
-package com.fresco.user.service.exceptionshandler.enums;
+package com.fresco.user.service.exceptionHandler.enums;
 
 public enum ErrorCodes {
 	INVALID_DATA("DTC0001"),

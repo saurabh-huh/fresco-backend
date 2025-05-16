@@ -8,11 +8,11 @@
 		<version>3.4.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.dtc.vehicle</groupId>
-	<artifactId>tracker</artifactId>
+	<groupId>com.fresko.userservice</groupId>
+	<artifactId>userservice</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>tracker</name>
-	<description>Delhi vehicle tracker</description>
+	<name>userservice</name>
+	<description>User Service</description>
 	<url/>
 	<licenses>
 		<license/>

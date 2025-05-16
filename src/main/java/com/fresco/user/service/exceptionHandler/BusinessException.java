@@ -1,8 +1,8 @@
-package com.fresco.user.service.exceptionshandler;
+package com.fresco.user.service.exceptionHandler;
 
 
 
-import com.fresco.user.service.exceptionshandler.enums.ErrorCodes;
+import com.fresco.user.service.exceptionHandler.enums.ErrorCodes;
 import org.springframework.context.MessageSource;
 import org.springframework.http.HttpStatus;
 

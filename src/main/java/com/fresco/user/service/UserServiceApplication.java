@@ -6,10 +6,10 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 @SpringBootApplication
 @EnableScheduling // Enable scheduling at the application level
-public class TrackerApplication {
+public class UserServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(TrackerApplication.class, args);
+		SpringApplication.run(UserServiceApplication.class, args);
 	}
 
 }

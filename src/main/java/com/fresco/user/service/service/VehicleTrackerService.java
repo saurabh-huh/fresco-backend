@@ -1,8 +1,8 @@
 package com.fresco.user.service.service;
 
 
-import com.fresco.user.service.exceptionshandler.BusinessException;
-import com.fresco.user.service.exceptionshandler.enums.ErrorCodes;
+import com.fresco.user.service.exceptionHandler.BusinessException;
+import com.fresco.user.service.exceptionHandler.enums.ErrorCodes;
 import com.fresco.user.service.model.VehicleData;
 import com.fresco.user.service.tracker.service.TrackerService;
 import com.google.protobuf.InvalidProtocolBufferException;
