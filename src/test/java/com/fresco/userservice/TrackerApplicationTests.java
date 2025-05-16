@@ -1,4 +1,4 @@
-package com.fresco.user.service;
+package com.fresco.userservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,4 +1,4 @@
-package com.fresco.user.service.exceptionHandler;
+package com.fresco.userservice.exceptionHandler;
 
 
 public class ExceptionResponse {

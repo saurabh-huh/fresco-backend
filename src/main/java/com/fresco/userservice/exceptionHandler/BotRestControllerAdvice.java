@@ -1,7 +1,7 @@
-package com.fresco.user.service.exceptionHandler;
+package com.fresco.userservice.exceptionHandler;
 
 
-import com.fresco.user.service.exceptionHandler.enums.ErrorCodes;
+import com.fresco.userservice.exceptionHandler.enums.ErrorCodes;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

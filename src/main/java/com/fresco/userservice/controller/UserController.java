@@ -1,4 +1,4 @@
-package com.fresco.user.service.controller;
+package com.fresco.userservice.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

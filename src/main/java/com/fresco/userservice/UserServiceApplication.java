@@ -1,4 +1,4 @@
-package com.fresco.user.service;
+package com.fresco.userservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
