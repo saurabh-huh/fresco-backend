@@ -1,12 +1,10 @@
 package com.fresco.userservice.model.dao;
 
 import com.fresco.userservice.enums.UserRole;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
@@ -35,7 +33,6 @@ public class UserDao {
     @Field("isVerified")
     private boolean isVerified;
 
-    @Enumerated(EnumType.STRING)
     @Field("role")
     private UserRole role;
 

@@ -21,6 +21,8 @@ target/
 
 
 **/application.properties
+**/userservice.log
+
 ### NetBeans ###
 /nbproject/private/
 /nbbuild/

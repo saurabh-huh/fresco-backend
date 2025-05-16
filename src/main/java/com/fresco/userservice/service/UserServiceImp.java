@@ -1,6 +1,5 @@
 package com.fresco.userservice.service;
 
-import com.fresco.userservice.enums.Status;
 import com.fresco.userservice.enums.UserRole;
 import com.fresco.userservice.exceptionHandler.BusinessException;
 import com.fresco.userservice.exceptionHandler.enums.ErrorCodes;
