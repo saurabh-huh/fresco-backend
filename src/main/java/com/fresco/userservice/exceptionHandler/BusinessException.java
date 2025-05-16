@@ -3,11 +3,13 @@ package com.fresco.userservice.exceptionHandler;
 
 
 import com.fresco.userservice.exceptionHandler.enums.ErrorCodes;
+import lombok.Data;
 import org.springframework.context.MessageSource;
 import org.springframework.http.HttpStatus;
 
 import java.util.Arrays;
 
+@Data
 public class BusinessException extends RuntimeException {
     private static final long serialVersionUID = 2457189159617736175L;
     private final HttpStatus status;
@@ -91,41 +93,42 @@ public class BusinessException extends RuntimeException {
         this.code = "ERROR0000";
     }
 
-    public HttpStatus getStatus() {
-        return this.status;
-    }
 
-    public String getMessage() {
-        return this.message;
-    }
-
-    public String getCode() {
-        return this.code;
-    }
-
-    public ErrorCodes getErrorCode() {
-        return this.errorCode;
-    }
-
-    public Object[] getArgs() {
-        return this.args;
-    }
-
-    public void setMessage(final String message) {
-        this.message = message;
-    }
-
-    public void setCode(final String code) {
-        this.code = code;
-    }
-
-    public void setErrorCode(final ErrorCodes errorCode) {
-        this.errorCode = errorCode;
-    }
-
-    public void setArgs(final Object[] args) {
-        this.args = args;
-    }
+//    public HttpStatus getStatus() {
+//        return this.status;
+//    }
+//
+//    public String getMessage() {
+//        return this.message;
+//    }
+//
+//    public String getCode() {
+//        return this.code;
+//    }
+//
+//    public ErrorCodes getErrorCode() {
+//        return this.errorCode;
+//    }
+//
+//    public Object[] getArgs() {
+//        return this.args;
+//    }
+//
+//    public void setMessage(final String message) {
+//        this.message = message;
+//    }
+//
+//    public void setCode(final String code) {
+//        this.code = code;
+//    }
+//
+//    public void setErrorCode(final ErrorCodes errorCode) {
+//        this.errorCode = errorCode;
+//    }
+//
+//    public void setArgs(final Object[] args) {
+//        this.args = args;
+//    }
 
     public boolean equals(final Object o) {
         if (o == this) {

@@ -26,16 +26,16 @@ import java.util.Objects;
 
 @RestControllerAdvice
 @Slf4j
-public class BotRestControllerAdvice {
+public class FrescoRestControllerAdvice {
 	
-	private static final Logger LOGGER = LoggerFactory.getLogger(BotRestControllerAdvice.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(FrescoRestControllerAdvice.class);
 
 	private final MessageSource messageSource;
 
 	private final Locale currentLocale = LocaleContextHolder.getLocale();
 
 	@Autowired
-	public BotRestControllerAdvice(MessageSource messageSource) {
+	public FrescoRestControllerAdvice(MessageSource messageSource) {
 		this.messageSource = messageSource;
 	}
 	
@@ -60,7 +60,7 @@ public class BotRestControllerAdvice {
 	
 	@ExceptionHandler(BusinessException.class)
 	public ResponseEntity<ExceptionResponse> handleBusinessException(final BusinessException exc,final WebRequest requset) {
-		String errorMessage = ErrorCodes.CDC_EXCEPTION.name();
+		String errorMessage = ErrorCodes.FK_EXCEPTION.name();
 		try {
 			 errorMessage = messageSource.getMessage(exc.getMessage(), exc.getArgs(), currentLocale);
 		}catch (Exception e) {
