@@ -40,7 +40,7 @@ public class FrescoRestControllerAdvice extends ResponseEntityExceptionHandler {
 
 	@ExceptionHandler(Exception.class)
 	public ResponseEntity<Object> handleAllExceptionMethod(final MethodArgumentNotValidException ex, final WebRequest requset) {
-		log.info("*** [BotRestControllerAdvice] :: handleAllExceptionMethod : Exception : {} ***", ex.getMessage());
+		log.info("*** [FrescoRestControllerAdvice] :: handleAllExceptionMethod : Exception : {} ***", ex.getMessage());
 		ExceptionResponse exceptionMessageObj = new ExceptionResponse();
 		StringBuilder sb = new StringBuilder();
 		List<FieldError> fieldErrors = (ex).getBindingResult().getFieldErrors();
