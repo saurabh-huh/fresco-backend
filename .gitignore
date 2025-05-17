@@ -20,7 +20,6 @@ target/
 *.ipr
 
 
-**/application.properties
 **/userservice.log
 
 ### NetBeans ###
