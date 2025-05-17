@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.context.request.ServletWebRequest;
 import org.springframework.web.context.request.WebRequest;
-import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
+import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 import java.util.List;
 import java.util.Locale;
@@ -26,16 +26,14 @@ import java.util.Objects;
 
 @RestControllerAdvice
 @Slf4j
-public class FrescoRestControllerAdvice {
-	
-	private static final Logger LOGGER = LoggerFactory.getLogger(FrescoRestControllerAdvice.class);
+public class FrescoRestControllerAdvice extends ResponseEntityExceptionHandler {
 
 	private final MessageSource messageSource;
 
 	private final Locale currentLocale = LocaleContextHolder.getLocale();
 
 	@Autowired
-	public FrescoRestControllerAdvice(MessageSource messageSource) {
+	public FrescoRestControllerAdvice(final MessageSource messageSource) {
 		this.messageSource = messageSource;
 	}
 	
@@ -60,28 +58,10 @@ public class FrescoRestControllerAdvice {
 	
 	@ExceptionHandler(BusinessException.class)
 	public ResponseEntity<ExceptionResponse> handleBusinessException(final BusinessException exc,final WebRequest requset) {
-		String errorMessage = ErrorCodes.FK_EXCEPTION.name();
-		try {
-			 errorMessage = messageSource.getMessage(exc.getMessage(), exc.getArgs(), currentLocale);
-		}catch (Exception e) {
-			LOGGER.info("Rest Controller Advice Exception {}",errorMessage);
-		}
+		String errorMessage = messageSource.getMessage(exc.getMessage(), exc.getArgs(), currentLocale);
 		return ResponseEntity.status(Objects.nonNull(exc.getStatus()) ? exc.getStatus() : HttpStatus.BAD_REQUEST)
 				.body(new ExceptionResponse(exc.getStatus().value(), exc.getStatus().getReasonPhrase(), errorMessage,
 						((ServletWebRequest) requset).getRequest().getServletPath(), exc.getCode(), exc.getMessage()));
-	}
-
-
-	@ExceptionHandler(MethodArgumentTypeMismatchException.class)
-	public ResponseEntity<Object> handleMethodArgumentTypeMismatchException(final MethodArgumentTypeMismatchException ex, final WebRequest requset) {
-		log.info("[BotRestControllerAdvice] :: handleMethodArgumentTypeMismatchException : Exception : {}", ex.getMessage());
-		ExceptionResponse exceptionMessageObj = new ExceptionResponse();
-		exceptionMessageObj.setStatus(HttpStatus.BAD_REQUEST.value());
-		exceptionMessageObj.setCode(ErrorCodes.NOT_NULL_VALIDATION.getValue());
-		exceptionMessageObj.setMessage(ex.getMessage());
-		exceptionMessageObj.setError(ex.getClass().getCanonicalName());
-		exceptionMessageObj.setPath(((ServletWebRequest) requset).getRequest().getServletPath());
-		return new ResponseEntity<>(exceptionMessageObj, new HttpHeaders(), HttpStatus.BAD_REQUEST);
 	}
 
 }
